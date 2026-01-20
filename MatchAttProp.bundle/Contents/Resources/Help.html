@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attribute Match Properties - Help Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========================================================================== */
+    /*                              GLOBAL STYLES                                 */
+    /* ========================================================================== */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      background-color: #ffffff;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* ========================================================================== */
+    /*                              HEADER STYLES                                 */
+    /* ========================================================================== */
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 120px;
+        background-color: #000000;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        padding: 0 25px;
+        z-index: 1000;
+        border-bottom: 4px solid #E51050;
+        box-sizing: border-box;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .main-logo {
+        height: 80px;
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .title-stack {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.80rem;
+        margin: 0;
+        margin: 0 0 0 10px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+    }
+
+    header h1 strong {
+        font-weight: 700;
+        margin-right: 8px;
+    }
+
+    .subtitle {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.90rem;
+        color: #cccccc;
+        margin: 10px 0 0 10px;
+        font-weight: 300;
+        line-height: 1;
+    }
+
+    .app-container {
+        display: flex;
+        margin-top: 120px; 
+        height: calc(100vh - 120px);
+    }
+
+    /* ========================================================================== */
+    /*                              SIDEBAR NAVIGATION                            */
+    /* ========================================================================== */
+    .sidebar {
+        width: 250px;
+        background-color: #f8f9fa;
+        border-right: 1px solid #dcdcdc;
+        overflow-y: auto;
+        padding: 20px;
+        flex-shrink: 0;
+    }
+
+    .sidebar h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: black;
+        padding: 0 12px;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        padding-bottom: 5px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar a {
+        text-decoration: none;
+        color: black; 
+        font-size: 0.95rem;
+        display: block;
+        padding: 7px 12px;
+        border-radius: 4px;
+        transition: background 0.2s;
+    }
+
+    .sidebar a:hover {
+        background-color: #eef7fd;
+    }
+
+    /* ========================================================================== */
+    /*                              MAIN CONTENT AREA                             */
+    /* ========================================================================== */
+    .main-content {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 25px 4%;
+        background-color: #ffffff;
+    }
+
+    section {
+        width: 95%;
+        max-width: 1200px;
+        margin-left: 0;
+        margin-bottom: 4rem;
+        scroll-margin-top: 25px;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        color: black;
+        margin-top: 0;
+        border-bottom: 1px solid #d4d4d4;
+        padding-bottom: 10px;
+    }
+
+    h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        color: black;
+        margin-top: 1.5rem;
+        margin-bottom: 0.2rem;
+    }
+
+    h3 + p, h3 + ul {
+        margin-top: 0.5rem; 
+    }
+
+    p { margin-bottom: 1.2rem; }
+
+    ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
+
+    code {
+        background-color: #f0f0f0;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: Consolas, monospace;
+    }
+
+    .message {
+        color: #555;
+        background-color: #f5f7f9;
+        border-left: 4px solid #4b79a1;
+        padding: 0.8rem 1rem;
+        margin: 1.5rem 0;
+        border-radius: 4px;
+    }
+
+    .author-section {
+        border-left: 4px solid #4b79a1;
+        padding-left: 20px;
+        margin: 20px 0;
+    }
+    .author-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #000;
+        margin: 0;
+    }
+    .author-meta {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.4;
+    }
+
+    video {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin: 20px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 0.5rem;
+        text-align: left;
+    }
+
+    th { background-color: #f1f1f1; }
+
+    footer {
+        border-top: 1px solid #eee;
+        padding: 20px 0px 0px 0px;
+        text-align: center;
+        color: #888;
+        font-size: 0.85rem;
+    }
+  </style>
+
+</head>
+
+<body>
+
+    <!-- Main Header ------------------------------------------------------------------------------------------------------------->
+    <header>
+        <div class="logo-container">
+            <img src="Resources/AppIcon_HighRes.png" alt="Logo" class="main-logo">
+            <div class="title-stack">
+            <h1>Match Attribute Properties</h1>
+            <p class="subtitle">Copy and paste block attribute properties</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-container">
+    
+    <!-- Sidebar Navigation -------------------------------------------------------------------------------------------------->
+    <nav class="sidebar">
+        <h2>Contents</h2>
+        <ul>
+            <li><a href="#app-summary">App Summary</a></li>
+            <li><a href="#deployment-option-1">Autodesk App Store Version</a></li>
+            <li><a href="#deployment-option-2">GitHub Version</a></li>
+            <li><a href="#using-the-app">Workflow</a></li>
+            <li><a href="#properties-tab">Supported Properties</a></li>
+            <li><a href="#about-app">About the Application</a></li>
+            <li><a href="#authors">Developer</a></li>
+            <li><a href="#version-history">Version History</a></li>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <!-- App Summary ---------------------------------------------------------------------------------------------------------->
+        <section id="app-summary">
+            <h2>MATCHATTPROP (Command)</h2>
+            <p>
+                The Match Attribute Properties Add-In is a powerful AutoCAD productivity tool designed to synchronize properties and 
+                formatting across block attributes.
+            </p>
+            <ul>
+            <li>Match text properties including Layer, Color, Style, Height, and Width Factor.</li>
+            <li>Synchronize geometric properties like Rotation, Justification, and Relative Position.</li>
+            <li>Optionally sync actual attribute values (text content) across matching tags.</li>
+            <li>Filter applications to only affect visible attributes, protecting background data.</li>
+            </ul>
+        </section>
+
+        <!-- Download from Autodesk App Store ------------------------------------------------------------------------------------->
+        <section id="deployment-option-1">
+            <h2>Download from Autodesk App Store</h2>
+            <p>
+                For the simplest experience, download the Match Attribute Properties add-in directly from the Autodesk App Store. 
+                The installer handles all configuration automatically.
+            </p>
+            <ol>
+            <li>Download and install the add-in from the Autodesk Web Store.</li>
+            <li>At the command prompt, type <code>MATCHATTPROP</code> to run the add-in.</li>
+            </ol>
+        </section>
+
+        <!-- Download from GitHub ------------------------------------------------------------------------------------------------->
+        <section id="deployment-option-2">
+            <h2>Download from GitHub</h2>
+            <p>
+                If you prefer to manage your plugins manually or are using the version from GitHub, use the Autoloader method. 
+                This ensures the add-in is loaded automatically every time you open AutoCAD.
+            </p>
+            <ol>
+            <li>Download the <code>MatchProps.Bundle</code> folder.</li>
+            <li>Copy the folder to: <code>%APPDATA%\Autodesk\ApplicationPlugins\</code></li><br>
+            <img src="Resources/Application Plugins Folder.png" alt="Application Plugins Folder" 
+            style="max-width:90%; height:auto; border: 1px solid black;"><br><br>
+            <li>Launch or restart AutoCAD.</li>
+            <li>Approve the security prompt by clicking “Always Load.”</li>
+            <li>At the command prompt, enter <code>MATCHATTPROP</code>.</li>
+            </ol>
+        </section>
+
+        <!-- Using the Application ------------------------------------------------------------------------------------------------->
+        <section id="using-the-app">
+            <h2>Workflow</h2>
+            <p>The application is designed around a "Pick and Apply" workflow to ensure accuracy before modifying drawing data.</p>
+  
+            <video width="100%" height="auto" autoplay loop muted playsinline 
+                poster="Resources/Fallback Image.png">
+                <source src="Resources/Match Attribute Properties.mp4" type="video/mp4">
+            </video>
+
+            <h3>Step 1: Picking the Source</h3>
+            <p>
+                Click "Pick Block" and select the block reference that contains your desired formatting. 
+                A block snapshot will appear in the preview window.
+            </p>
+
+            <h3>Step 2: Selecting Properties</h3>
+            <p>
+                Select the checkboxes for the specific properties you wish to transfer. Use "Select All" for a full sync or 
+                "Deselect All" to pick individual items like only Color or Position.
+            </p>
+
+            <h3>Step 3: Applying to Targets</h3>
+            <p>
+                Click "Apply" and select your destination blocks. The tool will find matching Attribute Tags and update them 
+                instantly. The command exits automatically upon completion.
+            </p>
+        </section>
+
+        <!-- Supported Properties ------------------------------------------------------------------------------------------------->
+        <section id="properties-tab">
+            <h2>Supported Properties</h2>
+            <p>
+                The tool synchronizes properties between blocks by matching <strong>Attribute Tags</strong>. 
+                If a tag exists in the source block but not the target, it is gracefully skipped.
+            </p>
+
+            <h3>Property Types</h3>
+            <ul>
+                <li><strong>General:</strong> Layer, Color, Linetype, Lineweight, and Visibility.</li>
+                <li><strong>Text:</strong> Style, Height, Rotation, Width Factor, and Oblique Angle.</li>
+                <li><strong>Geometry:</strong> Relative Position (offset from block base), Justification, and Alignment Point.</li>
+                <li><strong>Content:</strong> Attribute Value (Text String synchronization).</li>
+            </ul>
+
+            <h3>Command Options</h3>
+            <ul>
+                <li><strong>Match Visible Attributes Only:</strong> When this is active, the command ignores properties of hidden 
+                    attributes within the source block.</li>
+                <li><strong>Sync Attribute Values:</strong> When this is active, the actual text content from the source block attributes 
+                    is copied to the matching target block attributes.</li>
+            </ul>
+        </section>
+
+        <!-- About the Application ------------------------------------------------------------------------------------------------->
+        <section id="about-app">
+            <h2>About this Application</h2>
+            <div class="mission-container">
+            <p class="message">
+                Our goal is to provide the Autodesk community with practical, high-performance tools that eliminate repetitive tasks. 
+                <code>MATCHATTPROP</code> was developed to extend the logic of the native AutoCAD <code>MATCHPROP</code> command 
+                specifically for block attributes.<br><br>
+                The current version provides essential functionality for copying attribute properties. 
+                Based on user feedback, future updates may bring additional features and improvements.<br><br>
+                Please report any bugs or suggestions for new functionality by sending a personal message to @arshdeepsingh404 via 
+                your Autodesk Community account. Your feedback is invaluable and will help improve this tool for the entire community.
+            </p>
+            </div>
+        </section>
+
+        <!-- Developer Information ------------------------------------------------------------------------------------------------->
+        <section id="authors">
+            <h2>Developer</h2>
+            <div class="author-section">
+                <p class="author-name">Arshdeep Singh</p>
+                <p class="author-meta">
+                    Full-Stack Industrial Automation Developer<br>
+                    <strong>Autodesk Expert Elite</strong> | C. Tech | CMSE® | CAPM®
+                </p>
+            </div>
+        </section>
+
+        <!-- Version History ------------------------------------------------------------------------------------------------------->
+        <section id="version-history">
+            <div class="version-history">
+            <h2>Version History</h2>
+            <table>
+                <thead>
+                <tr><th>Version</th><th>Date</th><th>Changes</th></tr>
+                </thead>
+                <tbody>
+                <tr><td><strong>1.0.0</strong></td><td>January 2026</td><td>Initial Release.</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+
+        <!-- Privacy Policy ---------------------------------------------------------------------------------------------------------->
+        <section id="privacy-policy">
+            <h2 id="privacy-policy">Privacy Policy</h2>
+            <div class="section-content">
+                <p>
+                    This Privacy Policy section describes the data practices for the <strong>MatchAttProp</strong> application. 
+                    To promote transparency and protect user privacy, this policy explicitly addresses the mandatory requirements 
+                    of the Autodesk App Store.
+                </p>
+                
+                <h3>1. Data Collection and Usage</h3>
+                <p>
+                    This application does not collect, store, or transmit any personal information, user data, or drawing metadata. 
+                    It functions by temporarily reading block attribute properties (such as layers, colors, and positions) directly from 
+                    the active AutoCAD drawing to facilitate the requested synchronization. This data exists only in the computer's 
+                    volatile memory (RAM) while the command is active and is never saved to external servers or local logs.
+                </p>
+
+                <h3>2. Third-Party Sharing</h3>
+                <p>
+                    MatchAttProp does not share any information with third parties. There are no integrated analytics tools, 
+                    advertising SDKs, or external tracking mechanisms included in the software.
+                </p>
+
+                <h3>3. Data Retention and Deletion</h3>
+                <p>
+                    Because the application does not collect or store data, there is no data retention. All property information 
+                    processed during a command session is cleared from memory as soon as the application is closed or the command is finalized.
+                </p>
+
+                <h3>4. User Consent and Data Revocation</h3>
+                <p>
+                    As no personal data is collected or stored, there is no information for users to request the deletion of. 
+                    Users can effectively revoke consent at any time by uninstalling the application.
+                </p>
+            </div>
+        </section>
+
+      <!-- Footer ------------------------------------------------------------------------------------------------------------------>
+      <footer>
+        © 2026 Match Attribute Properties. All rights reserved.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

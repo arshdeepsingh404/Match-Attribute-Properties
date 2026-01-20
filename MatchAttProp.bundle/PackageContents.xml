@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage
+	SchemaVersion="1.0"
+	AppVersion="1.0.0"
+	Author="Arshdeep Singh"
+	Name="MatchAttProp"
+	Description="Match Attributes Properties AutoCAD .NET Plugin"
+	Icon="./Contents/Resources/AppIcon.ico"
+	HelpFile="./Contents/Resources/Help.html"
+	ProductCode="{D48D561E-1A3C-41A9-A113-B1B31ABA1F8F}"
+	UpgradeCode="{BB2084EF-20A6-4AB7-A2D3-382B1BEC59CF}"
+>
+
+	<CompanyDetails
+		Name="Arshdeep Singh"
+		Url="https://github.com/arshdeepsingh404" 
+		Email="arshkang440@gmail.com" />
+
+    <Components Description="Runtime parts">
+        <ComponentEntry
+            AppName="MatchAttProp"
+            AppDescription="Match Attributes Properties for AutoCAD 2025-2026"
+            AppType=".Net"
+            ModuleName="./Contents/net8.0/MatchAttProp.dll"
+            LoadOnAutoCADStartup="True">
+            
+            <RuntimeRequirements OS="Win64" Platform="AutoCAD*" SeriesMin="R25.0" SeriesMax="R26.0" />
+            
+            <Commands GroupName="MATCHATT_GRP">
+                <Command Global="MATCHATTPROP" Local="MATCHATTPROP" />
+            </Commands>
+        </ComponentEntry>
+
+        <ComponentEntry
+            AppName="MatchAttProp"
+            AppDescription="Match Attributes Properties for AutoCAD 2021-2024"
+            AppType=".Net"
+            ModuleName="./Contents/net4.8/MatchAttProp.dll"
+            LoadOnAutoCADStartup="True">
+            
+            <RuntimeRequirements OS="Win64" Platform="AutoCAD*" SeriesMin="R24.0" SeriesMax="R24.3" />
+            
+            <Commands GroupName="MATCHATT_GRP">
+                <Command Global="MATCHATTPROP" Local="MATCHATTPROP" />
+            </Commands>
+        </ComponentEntry>
+    </Components>
+
+</ApplicationPackage>
