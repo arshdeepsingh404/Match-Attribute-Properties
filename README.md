@@ -34,7 +34,8 @@ For the simplest experience, download the Match Attribute Properties add-in dire
 ## Download from GitHub
 If you prefer to manage your plugins manually or are using the version from GitHub, use the Autoloader method. This ensures the add-in is loaded automatically every time you open AutoCAD.
 
-1. Download the `MatchProps.Bundle` folder.
+1. 1. Navigate to the Releases tab on the right side of this GitHub repository.
+2. Download the `MatchProps.Bundle` zipped folder.
 2. Copy the folder to: `%APPDATA%\Autodesk\ApplicationPlugins\`.
 3. Launch or restart AutoCAD.
 4. Approve the security prompt by clicking “Always Load”.
