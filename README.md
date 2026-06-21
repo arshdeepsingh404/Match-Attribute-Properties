@@ -106,9 +106,3 @@ Autodesk Expert Elite | C. Tech | CMSE® | CAPM®
 | Version | Date | Changes |
 | :--- | :--- | :--- |
 | **1.0.0** | January 2026 | Initial Release |
-
-&nbsp;
-<p align="center">◈ ◈ ◈</p>
-&nbsp;
-
-_© 2026 Match Attribute Properties. All rights reserved._
